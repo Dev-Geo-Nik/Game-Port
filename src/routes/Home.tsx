@@ -1,5 +1,5 @@
 import React from 'react';
-import {GameList} from "../components";
+import GameList from "../components/GameList/GameList";
 
 
 

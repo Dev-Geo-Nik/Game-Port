@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import {Link} from "react-router-dom";
 import {Game} from  "../../../util/Types";
 
@@ -19,5 +19,5 @@ export const GameCard = ({content}:Props) => {
                 <p>{genre}</p>
         </Link>
         )
-
+  }
   export default GameCard

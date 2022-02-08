@@ -4,84 +4,82 @@ import { GameCard } from './GameCard/GameCard';
 import {API_KEY,API_HOST} from "../../util/Constants";
 
 
-interface Props {
-  error?:string
-  games?:Game[]
-}
+// interface Props {
+//   error?:string
+//   games?:Game[]
+// }
 
 
-const GameList = ({error,games}:Props) => {
+// const GameList = ({error,games}:Props) => {
+const GameList = () => {
 
-    const [currentGames,setGames] = useState<Game[]>([]);
-    const [err,setErr] = useState("")
+    // const [currentGames,setGames] = useState<Game[]>([]);
+    // const [err,setErr] = useState("")
 
-    useEffect(() =>{
-      fetchGames();
-    },[])
+    // useEffect(() =>{
+    //   fetchGames();
+    // },[])
 
-    console.log(currentGames);
+ 
 
-    const fetchGames = async  () =>{
+    // const fetchGames = async  () =>{
     
      
 
-      try {
+    //   try {
     
     
-          const res = await fetch(`https://${API_HOST}/api/games?platform=browser`, {
-            "method": "GET",
-            "headers": {
-              "x-rapidapi-host": API_HOST,
-              "x-rapidapi-key": API_KEY,
-            }
-          });
+    //       const res = await fetch(`https://${API_HOST}/api/games?platform=browser`, {
+    //         "method": "GET",
+    //         "headers": {
+    //           "x-rapidapi-host": API_HOST,
+    //           "x-rapidapi-key": API_KEY,
+    //         }
+    //       });
        
-           if (res.status >= 200 || res.status <= 299 ) {
-               const data = await res.json();
-              setGames(data)
-              //  dispatch({type:LOAD_ALL_COINS ,payload:data});
-           }
-       } catch (error) {
-               console.log(error)
+    //        if (res.status >= 200 || res.status <= 299 ) {
+    //            const data = await res.json();
+    //           setGames(data)
+    //           //  dispatch({type:LOAD_ALL_COINS ,payload:data});
+    //        }
+    //    } catch (error) {
+    //            console.log(error)
 
-               if ( typeof error ==="string") {
-                 setErr(error)
+    //            if ( typeof error === "string") {
+    //              setErr(error)
                  
-               }
+    //            }
 
-               //  setLoading(true);
-       }
+    //            //  setLoading(true);
+    //    }
     
-    }
+    // }
 
-    if (error) {
-        return <p>Unable to fetch games</p>
-    }
+    // if (error) {
+    //     return <p>Unable to fetch games</p>
+    // }
     
-    let displayGames = []
+    // let displayGames:{}|null = null;
 
 
-    if(games?.length){
+    // if(currentGames?.length){
 
-        displayGames = games.map((game=>{
-          const {id} = game;
-            return <li key={id}> 
-                        <GameCard content ={game}/>
-                  </li>
+    //     displayGames = currentGames.map((game=>{
+    //       const {id} = game;
+    //         return <li key={id}> 
+    //                     <GameCard content ={game}/>
+    //               </li>
     
-        }))
+    //     }))
 
-    }else{
-        displayGames = [];
-    }
-  
+    // }
     
    
 
     return  (
             <section>
               <ul>
-                {displayGames}
+                
                 
               </ul>
             </section>
