@@ -2,16 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { GamesProvider } from './context/Games/GameContext';
+import { GameContextProvider } from './context/Games/GameContext';
+
 
 
 
 ReactDOM.render(
   
   <React.StrictMode>
-      <GamesProvider>
-         <App/>
-    </GamesProvider>
+      <GameContextProvider>
+          <App/>
+      </GameContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

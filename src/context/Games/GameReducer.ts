@@ -1,16 +1,16 @@
-import{Game} from "../../util/Types";
-import {Action, AppState} from "./GameContext";
-import {Actions} from "../Actions";
+import { Action } from "../Actions";
+import { State } from "./GameContext";
+
+type ReducerType = (state: State, action: Action) => State;
 
 
 
+export const reducer: ReducerType = (state, action) => {
 
-export const reducer = (state:AppState,action:Action)=>{
-    const {type,payload} = action;
-
-    if (type === Actions.FETCH_ALL_GAMES) {
-        return({...state,Games:payload });
+    if (action.type === "FETCH_ALL_GAMES"){
+        console.log("Fetching all games")
+        return({...state,Games:action.payload });
     }
+    console.log("no changes to state")
     return state;
-    // throw new Error ("No matching action found!");
-}
+  };
