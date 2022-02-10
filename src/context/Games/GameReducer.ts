@@ -7,10 +7,11 @@ type ReducerType = (state: State, action: Action) => State;
 
 export const reducer: ReducerType = (state, action) => {
 
-    if (action.type === "FETCH_ALL_GAMES"){
-        console.log("Fetching all games")
+    if (action.type === "FETCH_ALL_GAMES"){   
+        console.log("fetching")
         return({...state,Games:action.payload });
     }
+
     console.log("no changes to state")
     return state;
   };

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { GameContextProvider } from './context/Games/GameContext';
+import GlobalStyles from './GlobalStyles';
 
 
 
@@ -11,8 +12,10 @@ ReactDOM.render(
   
   <React.StrictMode>
       <GameContextProvider>
-          <App/>
+          <GlobalStyles/>  
+            <App/>
       </GameContextProvider>
+  
   </React.StrictMode>,
   document.getElementById('root')
 );

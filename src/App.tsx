@@ -9,14 +9,13 @@ function App() {
 console.log("loading")
   return (
     <main>
-
-        <Router>
-      
+       
+          <Router>     
             <Routes >
-                <Route   path="/"  element={<Home/>} />
-             
+                <Route   path="/"  element={<Home/>} />           
             </Routes>
-       </Router>
+          </Router>
+        
     </main>
     
   );

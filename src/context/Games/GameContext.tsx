@@ -1,15 +1,11 @@
-import React,{
-    createContext,
-    Dispatch,
-    ReactNode,
-    useContext,
-    useEffect,
-    useReducer,
-  } from 'react';
-
-
-  import { Action, API_HOST, API_KEY, Game } from '../Actions';
+import React,{createContext,Dispatch,ReactNode,useContext,useEffect,useReducer} from 'react';
+import { Action, API_HOST, API_KEY, Game ,ActionTypes,FetchDataLinks,FetchDataParams} from '../Actions';
 import { reducer } from './GameReducer';
+
+
+
+
+
 
 
   //Both must have the same
@@ -24,7 +20,7 @@ import { reducer } from './GameReducer';
   }
 
 
-type ContextHook = () =>{
+ type ContextHook = () =>{
     state:State,
     dispatch:(action:Action) => void
 }
@@ -44,39 +40,24 @@ export const GameContextProvider = ({
     const [state, dispatch] = useReducer(reducer, initialState);
 
 
-
     useEffect(()=>{
-      fetchGames();
+      fetchData(FetchDataLinks,FetchDataParams,"FETCH_ALL_GAMES");
+    
     },[])
 
-    const fetchGames = async  () =>{
-    
+
+
+    const fetchData = async  (link:string,params:{},type:ActionTypes) =>{
       try {
-    
-    
-          const res = await fetch(`https://${API_HOST}/api/games?platform=browser`, {
-            "method": "GET",
-            "headers": {
-              "x-rapidapi-host": API_HOST,
-              "x-rapidapi-key": API_KEY,
-            }
-          });
-       
+          const res = await fetch(link, params);
+
            if (res.status >= 200 || res.status <= 299 ) {
                const data = await res.json();
               // console.log(data)
-
-               dispatch({type:'FETCH_ALL_GAMES',payload:data});
-              //  dispatch({type:LOAD_ALL_COINS ,payload:data});
+               dispatch({type:type,payload:data});            
            }
        } catch (error) {
                console.log(error)
-
-              //  if ( typeof error === "string") {
-              //    setErr(error)
-                 
-              //  }
-
                //  setLoading(true);
        }
 
@@ -105,4 +86,7 @@ export const useGameContext: ContextHook = () => {
     const { state, dispatch } = useContext(gameContext);
     return { state, dispatch };
   };
+  
+
+
   

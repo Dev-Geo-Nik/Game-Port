@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { useGameContext } from '../../context/Games/GameContext';
-
+import styled from "styled-components"
 
 
 
@@ -15,18 +15,23 @@ const GameList = () => {
   
     
     let displayGames = null;
-
+    const genreCategories :string[] = [];
 
     if(Games?.length){
 
         displayGames = Games.map((game=>{
-          const {id,title,thumbnail,genre,short_description} = game;
+          const {id,title,thumbnail,genre,short_description,platform} = game;
           const link = `/game/${id}`;
+
+            // console.log(platform)
+                // if (!genreCategories.includes(genre)) {
+                //       genreCategories.push(genre);
+                // }
 
             return <li key={id}> 
                         <Link to={link}>
                           <img src={thumbnail} alt={title} />
-                          <h2>{title}</h2>
+                          <h2 className="title">{title}</h2>
                           <p>{short_description}</p>
                           <p>{genre}</p>
                       </Link>
@@ -36,17 +41,24 @@ const GameList = () => {
 
     }
     
-   
+  //  console.log(genreCategories)
 
     return  (
-            <section>
-              <ul>
-                {displayGames}           
-              </ul>
-            </section>
+            <GameListDiv>
+                  <ul>
+                    {displayGames}           
+                  </ul>
+            </GameListDiv>
             )
 };
 
 export default GameList;
 
 
+
+
+const GameListDiv = styled.div`
+      margin: 0  var(--margin-x);
+      
+     
+`
