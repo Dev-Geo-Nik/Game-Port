@@ -11,7 +11,7 @@ html {
 :root {
     /* Colors */
     --clr-primary-1: #272b30;
-    --clr-primary-2: #2a2e33;
+    --clr-primary-2: #56595e;
     --clr-primary-3: #4799eb;
 
     --clr-primary-4: #2086ec;
@@ -31,7 +31,7 @@ html {
     --line-height: 1.25;
 
     /*margin*/
-    --margin-x: 20rem;
+    --margin-x: 25rem;
     --margin-y: 4rem;
     --section-margin-y: 20rem;
 

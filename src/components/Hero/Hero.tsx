@@ -22,7 +22,8 @@ export default Hero
 const HeroDiv = styled.div`
     
     position: relative;
-    
+    border: 1px solid black;
+    margin-bottom:15rem;
     .hero-text-container{
         position: absolute;
         top: 50%;
