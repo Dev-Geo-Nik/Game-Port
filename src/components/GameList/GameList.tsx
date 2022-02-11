@@ -16,7 +16,7 @@ const GameList = () => {
     
     let displayGames = null;
     const genreCategories :string[] = [];
-
+    console.log(Games.length)
     if(Games?.length){
 
         displayGames = Games.map((game=>{

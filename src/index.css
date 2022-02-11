@@ -14,7 +14,7 @@ html {
     --clr-primary-2: #2a2e33;
     --clr-primary-3: #4799eb;
 
-    --clr-primary-4: #94620c;
+    --clr-primary-4: #2086ec;
     --clr-primary-5: #e0a53f;
     --clr-primary-6: #d10024;
     --clr-primary-7: #24292e;
@@ -106,7 +106,7 @@ h5 {
 
 .btn {
     cursor: pointer;
-    background: var(--clr-primary-6);
+    /* background: var(--clr-primary-6); */
     color: #fff;
     padding: 0.5rem 1rem;
     letter-spacing: var(--spacing);
