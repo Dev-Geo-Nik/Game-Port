@@ -10,12 +10,12 @@ const Home = () => {
 
     return (
         <HomeSection>
-            <div className="main-container">
+            
                 <Header/>
                 <Hero/>
                 <GameList/>
                 <Footer/>
-            </div>
+         
         </HomeSection>
     )
     

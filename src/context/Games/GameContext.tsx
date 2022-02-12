@@ -1,9 +1,11 @@
-import React,{createContext,Dispatch,ReactNode,useContext,useEffect,useReducer} from 'react';
-import { Action, API_HOST, API_KEY, Game ,ActionTypes,FetchDataLinks,FetchDataParams} from '../Actions';
+import React,{ChangeEvent, createContext,Dispatch,ReactNode,useContext,useEffect,useReducer} from 'react';
+import { Action, API_HOST, API_KEY, Game ,ActionTypes,FetchAllGames,FetchDataParams} from '../Actions';
 import { reducer } from './GameReducer';
 
 
 
+type Platforms = "All Platforms" |  "Browser" | "PC"
+    
 
 
 
@@ -12,10 +14,18 @@ import { reducer } from './GameReducer';
 
   export interface State {
       Games: Game[];
+      platform: Platforms;
+      genre: string;
+      onChangeHandler:(e:React.ChangeEvent<HTMLSelectElement>) => void;
   }
 
   const initialState : State = {
-      Games: []
+      Games: [],
+      platform:"All Platforms",
+      genre:"Browser",
+      onChangeHandler(e:React.ChangeEvent<HTMLSelectElement>){
+         console.log(e)
+      }
 
   }
 
@@ -41,7 +51,7 @@ export const GameContextProvider = ({
 
 
     useEffect(()=>{
-      fetchData(FetchDataLinks,FetchDataParams,"FETCH_ALL_GAMES");
+      fetchData(FetchAllGames,FetchDataParams,"FETCH_ALL_GAMES");
     
     },[])
 
@@ -64,7 +74,9 @@ export const GameContextProvider = ({
     }
 
 
-
+  const test = ()=>{
+    
+  }
 
 
 
@@ -73,6 +85,8 @@ export const GameContextProvider = ({
         value={{
           state,
           dispatch,
+          
+          
         }}
       >
         {children}

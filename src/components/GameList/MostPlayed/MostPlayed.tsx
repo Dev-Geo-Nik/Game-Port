@@ -38,7 +38,7 @@ const MostPlayed = () => {
 export default MostPlayed
 
 const MostPlayedSection = styled.section`
-    /* background: red; */
+
     margin-left: 2rem;
 
     .title-text{
@@ -47,10 +47,7 @@ const MostPlayedSection = styled.section`
         margin-bottom: 1.6rem;
     }
 
-    .container{
-      /* display: flex; */
-
-    }
+    
 
     .list-container{
       position: relative;
@@ -59,9 +56,8 @@ const MostPlayedSection = styled.section`
 
     }
     .list-container:hover{
-      /* transform: scale(1.04); */
       border: 2px solid  #fff;
-
+      transform: scale(1.02);
 
     }
 
@@ -76,12 +72,8 @@ const MostPlayedSection = styled.section`
     }
 
     li:not(:last-child){
-   
-      /* background: blue; */
       margin-bottom: 2rem;
-    
-    
-     
+
     
     }
     .link{
@@ -89,8 +81,5 @@ const MostPlayedSection = styled.section`
       
     }
 
-    .image{
-        /* height: 20rem; */
-      
-    }
+    
 `

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Footer = () => {
   return (
-    <FooterElement>© {new Date().getFullYear()} Digiwalls  Media, all rights reserved. All trademarks are property of their respective owners.</FooterElement>
+    <FooterElement>© {new Date().getFullYear()}  All trademarks are property of their respective owners.</FooterElement>
   )
 }
 

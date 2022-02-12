@@ -20,40 +20,207 @@ export type Game = {
     freetomage_profile_url:string
 }
 
-export const genreCategoriesBrowser = {
-    MMORPG: "MMORPG",
-    CardGame: "Card Game",
-    Fantasy: "Fantasy",
-    Strategy: "Strategy",
-    Shooter: "Shooter",
-    Social: "Social"
-}
+export const platforms = [
+
+    {
+        value:"All Platforms",
+        display: "All Platforms"
+    },
+
+    {
+        value: 'browser',
+        display: "Browser (Web)"
+    },
+    {
+        value: 'pc',
+        display: "Windows (PC)"
+    }
+]
 
 
-export const genreCategoriesPC = {
-    MMORPG  : "MMORPG",
-    Shooter: "Shooter",
-    MMO: "MMO",
-    Social: "Social",
-    CardGame: "Card Game",
-    MOBA: "MOBA",
-    Fighting: "Fighting",
-    Strategy: "Strategy",
-    Racing: "Racing",
-    Sports: "Sports",
-    BattleRoyale: "Battle Royale",
-    ActionRPG: "Action RPG",
-    Card: "Card",
-    ARPG: "ARPG",
-    Moba: "Moba",
-    Fantasy: "Fantasy"
- }
+
+export const genreCategoriesBrowser =  [
+    {
+        value:"MMORPG",
+        display: "MMORPG"
+    },
+    {
+        value:"Card Game",
+        display: "Card Game"
+    },
+    {
+        value:"Fantasy",
+        display: "Fantasy"
+    },
+    {
+        value:"Strategy",
+        display: "Strategy"
+    },
+    {
+        value:"Shooter",
+        display: "Shooter"
+    }
+]
+
+
+export const genreCategoriesPC = [
+
+    {
+        value:"MMORPG",
+        display: "MMORPG"
+    },
+    {
+        value:"Card Game",
+        display: "Card Game"
+    },
+    {
+        value:"Fantasy",
+        display: "Fantasy"
+    },
+    {
+        value:"Strategy",
+        display: "Strategy"
+    },
+    {
+        value:"Shooter",
+        display: "Shooter"
+    },
+  
+    {
+        value:"MMO",
+        display: "MMO"
+    },
+    {
+        value:"Social",
+        display: "Social"
+    },
+  
+    {
+        value:"MOBA",
+        display: "MOBA"
+    },
+  
+    {
+        value:"Fighting",
+        display: "Fighting"
+    },
+  
+    {
+        value:"Racing",
+        display: "Racing"
+    },
+    {
+        value:"Sports",
+        display: "Sports"
+    },
+    {
+        value:"Battle Royale",
+        display: "Battle Royale"
+    },
+  
+    {
+        value:"Action RPG",
+        display: "Action RPG"
+    },
+  
+    {
+        value:"Card",
+        display: "Card"
+    },
+    {
+        value:"ARPG",
+        display: "ARPG"
+        
+    },
+    {
+        value:"Fantasy",
+        display: "Fantasy"
+        
+    }
+]
+
+ export const genreAllCategories =[
+    {
+        value:"All Genres",
+        display: "All Genres"
+    },
+
+    {
+        value:"MMORPG",
+        display: "MMORPG"
+    },
+    {
+        value:"Card Game",
+        display: "Card Game"
+    },
+    {
+        value:"Fantasy",
+        display: "Fantasy"
+    },
+    {
+        value:"Strategy",
+        display: "Strategy"
+    },
+    {
+        value:"Shooter",
+        display: "Shooter"
+    },
+  
+    {
+        value:"MMO",
+        display: "MMO"
+    },
+    {
+        value:"Social",
+        display: "Social"
+    },
+  
+    {
+        value:"MOBA",
+        display: "MOBA"
+    },
+  
+    {
+        value:"Fighting",
+        display: "Fighting"
+    },
+  
+    {
+        value:"Racing",
+        display: "Racing"
+    },
+    {
+        value:"Sports",
+        display: "Sports"
+    },
+    {
+        value:"Battle Royale",
+        display: "Battle Royale"
+    },
+  
+    {
+        value:"Action RPG",
+        display: "Action RPG"
+    },
+  
+    {
+        value:"Card",
+        display: "Card"
+    },
+    {
+        value:"ARPG",
+        display: "ARPG"
+        
+    }
+
+ ]
 
 export const API_KEY = 'e10973666fmsh8401609c340d96bp1f21b9jsn0ce5c8991ab2';
 export const API_HOST = "free-to-play-games-database.p.rapidapi.com";
 
 
-export const FetchDataLinks = `https://free-to-play-games-database.p.rapidapi.com/api/games?platform=pc`;
+export const FetchAllGames = `https://free-to-play-games-database.p.rapidapi.com/api/games`;
+// export const FetchPcGames = `https://free-to-play-games-database.p.rapidapi.com/api/games?platform=pc`;
 
 export const FetchDataParams = {
     "method": "GET",

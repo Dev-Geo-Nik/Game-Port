@@ -1,7 +1,7 @@
 import React ,{useContext} from 'react';
 import {BrowserRouter as Router,Route ,Routes } from 'react-router-dom';
 
-import {Home} from "./routes";
+import {Games, Home} from "./routes";
 
 
 
@@ -13,6 +13,7 @@ console.log("loading")
           <Router>     
             <Routes >
                 <Route   path="/"  element={<Home/>} />           
+                <Route   path="/games"  element={<Games/>} />           
             </Routes>
           </Router>
         

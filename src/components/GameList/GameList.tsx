@@ -24,7 +24,6 @@ const GameList = () => {
             <GameListDiv>
                  <GamesAdded/>  
                  <MostPlayed/>
-             
             </GameListDiv>
             )
 };
