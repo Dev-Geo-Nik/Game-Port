@@ -16,28 +16,33 @@ type Platforms = "All Platforms" |  "Browser" | "PC"
       Games: Game[];
       platform: Platforms;
       genre: string;
-      onChangeHandler:(e:React.ChangeEvent<HTMLSelectElement>) => void;
+      // onChangeHandler:
   }
 
   const initialState : State = {
       Games: [],
       platform:"All Platforms",
-      genre:"Browser",
-      onChangeHandler(e:React.ChangeEvent<HTMLSelectElement>){
-         console.log(e)
-      }
+      genre:"Browser"
+     
 
   }
 
 
  type ContextHook = () =>{
     state:State,
-    dispatch:(action:Action) => void
+    dispatch:(action:Action) => void,
+   
+    
 }
 
-const  gameContext =  createContext<{state:State;dispatch:Dispatch<Action>;}>({
+const  gameContext =  createContext<{
+  state:State;
+  dispatch:Dispatch<Action>;
+  
+}>({
     state:initialState,
     dispatch: ()=>{}
+
 })
 
 
@@ -74,9 +79,9 @@ export const GameContextProvider = ({
     }
 
 
-  const test = ()=>{
-    
-  }
+    const onChangeHandler = ()=>{
+        console.log("is me")
+    }
 
 
 
@@ -85,6 +90,7 @@ export const GameContextProvider = ({
         value={{
           state,
           dispatch,
+        
           
           
         }}

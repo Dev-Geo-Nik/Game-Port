@@ -7,7 +7,7 @@ import {platforms,genreCategoriesBrowser,genreCategoriesPC,genreAllCategories} f
 
 
 const Filters = () => {
-  const {state:{Games,onChangeHandler}} = useGameContext();
+  const {state:{Games}} = useGameContext();
      
       
       const displayPlatforms = platforms.map((platform)=>{
@@ -23,7 +23,7 @@ const Filters = () => {
       })
 
       const onChangeHandlerX = (e:React.ChangeEvent<HTMLSelectElement>) =>{
-        console.log(e)
+        console.log(e.target.name,e.target.value)
       }
 
   return (
@@ -32,7 +32,7 @@ const Filters = () => {
              <p className="sub-title"> <span className="games-number">{Games.length}</span> free-to-play games found in our list!</p>
              <form className="filters-container">
                   <label htmlFor="platform" className="platforms-label">Platform 
-                    <select name="platform" id="platform" className="platform-select" onChange = {(e)=>onChangeHandler(e)}>
+                    <select name="platform" id="platform" className="platform-select" onChange = {(e)=>onChangeHandlerX(e)}>
                         {displayPlatforms}
                     </select>
                   </label>
