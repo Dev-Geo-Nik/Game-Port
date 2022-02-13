@@ -1,4 +1,9 @@
-export type ActionTypes = 'FETCH_ALL_GAMES' | 'FETCH_SINGLE_GAME';
+export enum ActionTypes  {
+    FETCH_ALL_GAMES = "FETCH_ALL_GAMES",
+    FETCH_SINGLE_GAME = "FETCH_SINGLE_GAME",
+    CHANGE_PLATFORM_FILTER = "CHANGE_PLATFORM_FILTER",
+    CHANGE_PLATFORM_GENRE = "CHANGE_PLATFORM_GENRE"
+}
 
 export interface Action {
     type: ActionTypes;
@@ -28,11 +33,11 @@ export const platforms = [
     },
 
     {
-        value: 'browser',
+        value: 'Browser',
         display: "Browser (Web)"
     },
     {
-        value: 'pc',
+        value: 'PC',
         display: "Windows (PC)"
     }
 ]

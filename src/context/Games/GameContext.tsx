@@ -1,4 +1,5 @@
 import React,{ChangeEvent, createContext,Dispatch,ReactNode,useContext,useEffect,useReducer} from 'react';
+
 import { Action, API_HOST, API_KEY, Game ,ActionTypes,FetchAllGames,FetchDataParams} from '../Actions';
 import { reducer } from './GameReducer';
 
@@ -16,13 +17,14 @@ type Platforms = "All Platforms" |  "Browser" | "PC"
       Games: Game[];
       platform: Platforms;
       genre: string;
-      // onChangeHandler:
+  
   }
 
   const initialState : State = {
       Games: [],
       platform:"All Platforms",
-      genre:"Browser"
+      genre:"All Genres",
+      
      
 
   }
@@ -56,16 +58,17 @@ export const GameContextProvider = ({
 
 
     useEffect(()=>{
-      fetchData(FetchAllGames,FetchDataParams,"FETCH_ALL_GAMES");
+      fetchData(FetchAllGames,FetchDataParams,ActionTypes.FETCH_ALL_GAMES);
     
     },[])
 
-
-
     const fetchData = async  (link:string,params:{},type:ActionTypes) =>{
+
+   
+
       try {
           const res = await fetch(link, params);
-
+  
            if (res.status >= 200 || res.status <= 299 ) {
                const data = await res.json();
               // console.log(data)
@@ -75,24 +78,14 @@ export const GameContextProvider = ({
                console.log(error)
                //  setLoading(true);
        }
-
+  
     }
-
-
-    const onChangeHandler = ()=>{
-        console.log("is me")
-    }
-
-
 
     return (
       <gameContext.Provider
         value={{
           state,
-          dispatch,
-        
-          
-          
+          dispatch
         }}
       >
         {children}

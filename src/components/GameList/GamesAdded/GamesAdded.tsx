@@ -10,7 +10,7 @@ import { FaWindows } from "react-icons/fa";
 const GamesAdded = () => {
     const {state:{Games}} = useGameContext();
 
-    let displayGames = null;
+    let displayGames :(JSX.Element[] |null) = null;
 
     
  
