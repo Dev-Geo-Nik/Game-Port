@@ -44,105 +44,8 @@ export const platforms = [
 
 
 
-export const genreCategoriesBrowser =  [
-    {
-        value:"MMORPG",
-        display: "MMORPG"
-    },
-    {
-        value:"Card Game",
-        display: "Card Game"
-    },
-    {
-        value:"Fantasy",
-        display: "Fantasy"
-    },
-    {
-        value:"Strategy",
-        display: "Strategy"
-    },
-    {
-        value:"Shooter",
-        display: "Shooter"
-    }
-]
 
 
-export const genreCategoriesPC = [
-
-    {
-        value:"MMORPG",
-        display: "MMORPG"
-    },
-    {
-        value:"Card Game",
-        display: "Card Game"
-    },
-    {
-        value:"Fantasy",
-        display: "Fantasy"
-    },
-    {
-        value:"Strategy",
-        display: "Strategy"
-    },
-    {
-        value:"Shooter",
-        display: "Shooter"
-    },
-  
-    {
-        value:"MMO",
-        display: "MMO"
-    },
-    {
-        value:"Social",
-        display: "Social"
-    },
-  
-    {
-        value:"MOBA",
-        display: "MOBA"
-    },
-  
-    {
-        value:"Fighting",
-        display: "Fighting"
-    },
-  
-    {
-        value:"Racing",
-        display: "Racing"
-    },
-    {
-        value:"Sports",
-        display: "Sports"
-    },
-    {
-        value:"Battle Royale",
-        display: "Battle Royale"
-    },
-  
-    {
-        value:"Action RPG",
-        display: "Action RPG"
-    },
-  
-    {
-        value:"Card",
-        display: "Card"
-    },
-    {
-        value:"ARPG",
-        display: "ARPG"
-        
-    },
-    {
-        value:"Fantasy",
-        display: "Fantasy"
-        
-    }
-]
 
  export const genreAllCategories =[
     {
@@ -158,10 +61,7 @@ export const genreCategoriesPC = [
         value:"Card Game",
         display: "Card Game"
     },
-    {
-        value:"Fantasy",
-        display: "Fantasy"
-    },
+    
     {
         value:"Strategy",
         display: "Strategy"

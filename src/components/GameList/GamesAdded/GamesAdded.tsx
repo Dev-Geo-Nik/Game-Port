@@ -108,6 +108,7 @@ const GamesAddedSection = styled.section`
     .text-description{
         font-size:1.5rem;
         overflow:hidden;
+        white-space: nowrap;
         text-overflow: ellipsis;
     }
 
