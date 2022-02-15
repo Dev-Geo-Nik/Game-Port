@@ -1,11 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
+import { ActionTypes } from '../../../context/Actions';
 import { useGameContext } from '../../../context/Games/GameContext';
 
 
 const MostPlayed = () => {
-  const {state:{Games}} = useGameContext();
+  const {state:{Games},dispatch} = useGameContext();
+
+
+  const onClickHandler = (id:number) => {
+       
+    dispatch({type:ActionTypes.FETCH_GAME_ID,payload:id});
+}
 
   let displayGames = null;
 
@@ -13,10 +20,10 @@ const MostPlayed = () => {
 
           displayGames =Games.slice(16,30).map((game)=>{
             const {id,title,thumbnail,genre,short_description,platform} = game;
-            const link = `/game/${id}`;
+            
 
             return <li key={id} className="list-container"> 
-                      <Link to={link} className="link">
+                      <Link to={`/game/${id}`} className="link" onClick={()=>onClickHandler(id)}>
                           <img src={thumbnail} alt={title} className="image" />  
                             <p className="free-tag">Free</p>
                       </Link>

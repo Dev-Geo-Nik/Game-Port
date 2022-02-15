@@ -3,23 +3,28 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useGameContext } from '../../../context/Games/GameContext';
 import { FaWindows } from "react-icons/fa";
+import { ActionTypes } from '../../../context/Actions';
 
 
 
 
 const GamesAdded = () => {
-    const {state:{Games}} = useGameContext();
+    const {state:{Games},dispatch} = useGameContext();
 
     let displayGames :(JSX.Element[] |null) = null;
 
-    
+    const onClickHandler = (id:number) => {
+            
+        dispatch({type:ActionTypes.FETCH_GAME_ID,payload:id});
+    }
+
  
     
     if(Games?.length){
 
         displayGames = Games.slice(0,15).map((game=>{
           const {id,title,thumbnail,genre,short_description,platform} = game;
-          const link = `/game/${id}`;
+         
 
             
 
@@ -32,7 +37,7 @@ const GamesAdded = () => {
                              <div className="icons-container">
                                 <p className="genre icons">{genre}</p>
                                 <FaWindows className="windows-icon "/>
-                                <Link to={link} className="btn btn-link">LEARN MORE</Link>
+                                <Link to={`/game/${id}`} className="btn btn-link" onClick={()=>onClickHandler(id)}>LEARN MORE</Link>
                                 <p className="free-tag icons">Free</p>
                              </div>
                           </div>

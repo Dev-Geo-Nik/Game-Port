@@ -1,6 +1,7 @@
 import React,{ChangeEvent, createContext,Dispatch,ReactNode,useContext,useEffect,useReducer} from 'react';
 
-import { Action, API_HOST, API_KEY, Game ,ActionTypes,FetchAllGames,FetchDataParams} from '../Actions';
+
+import { Action, Game ,ActionTypes,FetchAllGamesUrl,FetchDataParams, SingleGameType} from '../Actions';
 import { reducer } from './GameReducer';
 
 
@@ -15,13 +16,17 @@ type Platforms = "All Platforms" |  "Browser" | "PC"
 
   export interface State {
       Games: Game[];
+      SingleGame :SingleGameType | null;
+      gameID : number
       platform: Platforms;
       genre: string;
-  
+      
   }
 
   const initialState : State = {
       Games: [],
+      SingleGame:null,
+      gameID:1,
       platform:"All Platforms",
       genre:"All Genres",
       
@@ -56,11 +61,44 @@ export const GameContextProvider = ({
   }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
-
+    
     useEffect(()=>{
-      fetchData(FetchAllGames,FetchDataParams,ActionTypes.FETCH_ALL_GAMES);
+      fetchData(FetchAllGamesUrl,FetchDataParams,ActionTypes.FETCH_ALL_GAMES);
+      // fetchSingleGame(state.gameID)
     
     },[])
+
+
+
+    useEffect(()=>{
+      fetchSingleGame(state.gameID)
+      
+    },[state.gameID])
+    
+    // setLoading(false);
+
+
+
+       const fetchSingleGame = async (id:number) => {
+      try {
+        const res = await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/game?id=${id}`, FetchDataParams);
+
+        if (res.status >= 200 || res.status <= 299 ) {
+            const data = await res.json();
+            // console.log(data)
+            dispatch({type:ActionTypes.FETCH_SINGLE_GAME,payload:data});            
+        }
+    } catch (error) {
+            console.log(error)
+            //  setLoading(true);
+            
+    }
+  }
+
+
+    
+
+   
 
     const fetchData = async  (link:string,params:{},type:ActionTypes) =>{
 
@@ -80,6 +118,10 @@ export const GameContextProvider = ({
        }
   
     }
+
+
+  
+
 
     return (
       <gameContext.Provider

@@ -17,6 +17,10 @@ export const reducer: ReducerType = (state, action) => {
             return({...state,platform:action.payload})
             case ActionTypes.CHANGE_PLATFORM_GENRE :
             return({...state,genre:action.payload})
+         case ActionTypes.FETCH_SINGLE_GAME :
+             return({...state,SingleGame:action.payload})   
+         case ActionTypes.FETCH_GAME_ID :
+             return({...state,gameID:action.payload})   
         default:
             return state;
     }

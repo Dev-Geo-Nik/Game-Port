@@ -4,9 +4,24 @@ import styled from 'styled-components';
 import { useGameContext } from '../../../context/Games/GameContext';
 import { FaWindows } from "react-icons/fa";
 import { GoBrowser } from "react-icons/go";
+import { ActionTypes } from '../../../context/Actions';
+
+
+
+
+
+
 
 const  GameCard :React.FC = () => {
-    const {state:{Games,genre:stateGenre,platform:statePlatform }} = useGameContext();
+  
+  const {state:{Games,genre:stateGenre,platform:statePlatform },dispatch} = useGameContext();
+  
+     const onClickHandler = (id:number) => {
+       
+        dispatch({type:ActionTypes.FETCH_GAME_ID,payload:id});
+    }
+
+
 
     let displayGames :((JSX.Element|null)[] | [])  = [];
 
@@ -29,10 +44,10 @@ const  GameCard :React.FC = () => {
                 }
                 
                 
-                
+               
 
           return(
-                <Link  to={`/game/${id}`} className="list-container" key={id}>
+                <Link  to={`/game/${id}`}   className="list-container" key={id} onClick={()=>onClickHandler(id)}>
                       <img src={thumbnail} alt={title} className="img" />
                        <h3 className="title text general">{title}</h3>
                        <p className="description-text text general">{short_description}</p>
