@@ -9,7 +9,7 @@ const Hero = () => {
         <HeroDiv>
             <div className="hero-text-container"> 
                  <h1 className="hero-title">Find & track the best  <span className="hero-title-span">free-to-play </span> games!</h1>
-                 <p className="sub-title">Track what you've played and search for what to play next!</p>
+                 {/* <p className="sub-title">Track what you've played and search for what to play next!</p> */}
                  <Link  to="/games" className="btn btn-cta">GET STARTED ITS FREE</Link>
             </div>         
                 <img src={image} alt="hero image" className="hero-image" />
@@ -38,12 +38,14 @@ const HeroDiv = styled.div`
 
     .hero-title{
        font-size:4rem;
+       margin-bottom: 4rem;
        
        
     }
 
     .hero-title-span{
         color:var(--clr-primary-3);
+      
     }
 
     .sub-title{
@@ -67,8 +69,9 @@ const HeroDiv = styled.div`
         background: var(--clr-primary-3);
         padding: 1.5rem 1.5rem;
         font-size: 1.5rem;
-         border-radius: 4px;
-         transform: var(--transition);
+        border-radius: 4px;
+        /* margin-top:4rem; */
+        transform: var(--transition);
     }
 
 

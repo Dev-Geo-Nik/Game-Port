@@ -36,10 +36,6 @@ const Filters = () => {
 
 
 
-      // const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-      //   e.preventDefault()
-      //   console.log("submitted")
-      //  }
 
 
   return (

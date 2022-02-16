@@ -1,23 +1,26 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import { GiGamepadCross ,GiGameConsole,GiMagicPortal} from "react-icons/gi";
+import {GiMagicPortal} from "react-icons/gi";
+const Logo : string = require("../../assets/logo.png");
+
 
 
 const Header = () => {
-    
+    const {pathname} = useLocation()
+    // console.log(pathname)
   return (
        
           <HeaderNav>
             <ul className="list-container">
                 
                 <Link to="/" className="logo-container">
-                  <GiMagicPortal className="logo"/>
+                  <img src={Logo} alt="" className="logo" />
                   <span className="logo-text ">Game Portal</span>
-                </Link>
-                <Link to="/games" className="Game-list list-item">Game List</Link>
-                <Link to="/trending" className="list-item">Trending Games</Link>
-                
+                </Link>    
+                <Link to="/games"className = {pathname === "/games"? "game-link link-item active":"game-link link-item"}>Game List</Link> 
+                <Link to="/" className= {pathname === "/" ?"home-link link-item active":"home-link link-item"}>Home</Link>
+              
                 
             </ul>
           </HeaderNav>
@@ -48,8 +51,10 @@ const HeaderNav = styled.nav`
   }
 
   .logo{
-    font-size:4.5rem;
-    color:var(--clr-primary-3);
+    
+    width:6rem;
+    height: 6rem;
+    border-radius: 50%;
   }
   
   .logo-text{
@@ -60,23 +65,35 @@ const HeaderNav = styled.nav`
     margin-left:0.5rem;
     }
 
-    .Game-list{
+    .game-link{
       /* color:var(--clr-text-1); */
       margin:0 2rem 0 auto;
       
     }
+    .link-item{
+      color:var(--clr-text-1);
+      transition:var(--transition);
+      font-size:1.6rem;
+      padding: 1rem;
+    }
     
     //General styles
-    .list-item{
-      color:var(--clr-text-1);
-      font-size:1.6rem;
-      transition:var(--transition);
+    .home-link{
+    
+    
+      
     }  
 
-    .list-item:hover{
+    .link-item:hover{
       color:#fff;
+      background: var(--clr-primary-3);
+      padding: 1rem;
     }
   
-
+    .active{
+      background: var(--clr-primary-3);
+      padding: 1rem;
+      color: #fff;
+    }
 
 `
