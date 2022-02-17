@@ -257,4 +257,14 @@ const SingleGameComponentElement = styled.div`
       margin-left: 0.5rem;
     }
 
+
+    .screenshots{
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .screenshots:hover{
+      transform: scale(200%);
+    }
+
 `

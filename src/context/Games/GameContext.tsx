@@ -1,6 +1,7 @@
 import React,{ChangeEvent, createContext,Dispatch,ReactNode,useContext,useEffect,useReducer} from 'react';
 
 
+
 import { Action, Game ,ActionTypes,FetchAllGamesUrl,FetchDataParams, SingleGameType} from '../Actions';
 import { reducer } from './GameReducer';
 
@@ -64,8 +65,8 @@ export const GameContextProvider = ({
     
     useEffect(()=>{
       fetchData(FetchAllGamesUrl,FetchDataParams,ActionTypes.FETCH_ALL_GAMES);
-      // fetchSingleGame(state.gameID)
-    
+ 
+
     },[])
 
 

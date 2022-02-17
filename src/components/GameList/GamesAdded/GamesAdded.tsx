@@ -64,7 +64,7 @@ export default GamesAdded
 
 
 const GamesAddedSection = styled.section`
-
+    /* width: 80%; */
     .title-text{
         font-size:2.5rem;
         color: var(--clr-text-1);
@@ -77,6 +77,7 @@ const GamesAddedSection = styled.section`
         padding:2rem;
         margin: 1.5rem 1.5rem 1.5rem 0;
         /* border: 1rem solid var( --clr-primary-2); */
+        /* width: 100%; */
         
    
     }
@@ -91,11 +92,12 @@ const GamesAddedSection = styled.section`
         /* background:yellow; */
         display: flex;
         
+        
     }
 
     .image{
-        width:25rem;
-        height:15rem;
+        /* width:25rem;
+        height:15rem; */
        
     }
 
@@ -161,4 +163,25 @@ const GamesAddedSection = styled.section`
         background: var(--clr-primary-4);
         color: var(--clr-primary-1);
     }
+
+    
+    @media (max-width: 1650px) {
+        .link{
+            flex-direction: column;
+        }
+
+        .icons-container{
+            /* justify-content: space-around; */
+            margin-right: 2rem;
+        }
+    }
+
+
+    @media (max-width: 1550px) {
+        .main-container{
+            width: 80%;
+        }
+}
+
+
 `

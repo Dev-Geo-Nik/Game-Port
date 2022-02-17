@@ -8,7 +8,7 @@ const Hero = () => {
          return (
         <HeroDiv>
             <div className="hero-text-container"> 
-                 <h1 className="hero-title">Find & track the best  <span className="hero-title-span">free-to-play </span> games!</h1>
+                 <h1 className="hero-title">Track the best  <span className="hero-title-span">free-to-play </span> games!</h1>
                  {/* <p className="sub-title">Track what you've played and search for what to play next!</p> */}
                  <Link  to="/games" className="btn btn-cta">GET STARTED ITS FREE</Link>
             </div>         

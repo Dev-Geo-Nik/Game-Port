@@ -18,7 +18,7 @@ const MostPlayed = () => {
 
         if (Games.length) {
 
-          displayGames =Games.slice(16,30).map((game)=>{
+          displayGames =Games.slice(16,33).map((game)=>{
             const {id,title,thumbnail,genre,short_description,platform} = game;
             
 
@@ -48,6 +48,12 @@ const MostPlayedSection = styled.section`
 
     margin-left: 2rem;
 
+    .container{
+    
+    display: flex;
+    flex-direction: column;
+  
+    }
     .title-text{
       font-size:2.5rem;
         color: var(--clr-text-1);
@@ -58,6 +64,7 @@ const MostPlayedSection = styled.section`
 
     .list-container{
       position: relative;
+    
       transition: var(--transition);
       border: 2px solid var(--clr-primary-1);
 
@@ -66,6 +73,11 @@ const MostPlayedSection = styled.section`
       border: 2px solid  #fff;
       transform: scale(1.02);
 
+    }
+
+    .image{
+      /* width: 100%; */
+      /* height: 100%; */
     }
 
     .free-tag{
@@ -85,7 +97,7 @@ const MostPlayedSection = styled.section`
     }
     .link{
      display: inline-block;
-      
+     /* height: 100%; */
     }
 
     
