@@ -1,6 +1,6 @@
 import React  from 'react';
 import {BrowserRouter as Router,Route ,Routes } from 'react-router-dom';
-import {Games, Home ,Game} from "./routes";
+import {Games ,Game} from "./routes";
 
 
 
@@ -12,8 +12,8 @@ console.log("loading")
        
           <Router>     
             <Routes >
-                <Route   path="/"  element={<Home/>} />           
-                <Route   path="/games"  element={<Games/>} />           
+                {/* <Route   path="/"  element={<Home/>} />            */}
+                <Route   path="/"  element={<Games/>} />           
                 <Route  path="/game/:id"  element={<Game/>}/>      
                 {/* <Route  path="/game/id?=id"  element={<SingleGame/>}/>       */}
             </Routes>

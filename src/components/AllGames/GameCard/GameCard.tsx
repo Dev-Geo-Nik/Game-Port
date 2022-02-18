@@ -71,9 +71,7 @@ const  GameCard :React.FC = () => {
       return (
     <GameCardElement >
        <ul className="container">
-         
-          {displayGames.every(element => element === null) ? <h2 className="no-games-text">There is no game with these filters please try again !</h2> :displayGames} 
-          
+          {displayGames.every(element => element === null) ? <h2 className="no-games-text">There is no game with these filters please try again !</h2> :displayGames}   
        </ul>
     </GameCardElement >
     );
@@ -164,5 +162,14 @@ const GameCardElement = styled.section`
     font-size:2.5rem;
     color: #fff;
     }
+
+
+    @media (max-width: 360px) {
+    .container {
+      /* grid-template-columns: 1fr; */
+     
+    }
+}
+
 
 `

@@ -70,7 +70,9 @@ const FiltersDiv = styled.div`
     
     
     .title{
+      font-size: 3rem;
       margin-bottom: 2rem;
+      
 
     }
 
@@ -94,8 +96,6 @@ const FiltersDiv = styled.div`
     .label{
       font-size:2rem;
       margin-right: 2rem;
-    
-    
    
     }
 
@@ -104,6 +104,54 @@ const FiltersDiv = styled.div`
       margin-left: 2rem;
 
     }
+
+
+
+    @media (max-width: 1100px) {
+      .title {
+     font-size:2.8rem;
+    }
+  }
+
+    @media (max-width: 650px) {
+      .title {
+     font-size:2.5rem;
+       }
+    }
+
+
+    @media (max-width: 520px) {
+      .title {
+     font-size:2rem;
+       }
+    }
+
+
+
+
+
+    @media (max-width: 375px) {
+
+      .label{
+      font-size:1.6rem;
+      margin: 0 1rem;
+      
+      .sub-title{
+          font-size: 1.3rem;
+       }
+   
+    }
+    .title {
+         font-size:1.4rem;
+    
+       }
+
+    }
+
+    
+
+
+    
 
     
 

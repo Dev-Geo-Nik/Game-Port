@@ -8,7 +8,7 @@ const Logo : string = require("../../assets/logo.png");
 
 const Header = () => {
     const {pathname} = useLocation()
-    // console.log(pathname)
+  
   return (
        
           <HeaderNav>
@@ -18,8 +18,8 @@ const Header = () => {
                   <img src={Logo} alt="" className="logo" />
                   <span className="logo-text ">Game Portal</span>
                 </Link>    
-                <Link to="/games"className = {pathname === "/games"? "game-link link-item active":"game-link link-item"}>Game List</Link> 
-                <Link to="/" className= {pathname === "/" ?"home-link link-item active":"home-link link-item"}>Home</Link>
+                <Link to="/"className = {pathname === "/"? "game-link link-item active":"game-link link-item"}>Game List</Link> 
+                {/* <Link to="/" className= {pathname === "/" ?"home-link link-item active":"home-link link-item"}>Home</Link> */}
               
                 
             </ul>
